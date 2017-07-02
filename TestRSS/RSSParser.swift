@@ -17,14 +17,18 @@ class RSSParser:NSObject, XMLParsable {
     var output: Array<Article> = []
     var element: String = ""
     
-    func parse() {
+    func parse(completion: (ParseState<Article>) -> Void) {
         
         guard let url = URL(string: link) else { return }
         parser = XMLParser(contentsOf: url)
         parser?.delegate = self
         if let flag = parser?.parse() {
             
-            print(output)
+            if flag {
+                completion(ParseState.success(output))
+            }else{
+                completion(ParseState.error(parser.parserError))
+            }
         }
     }
 }
@@ -73,7 +77,4 @@ extension RSSParser: XMLParserDelegate{
         }
     }
     
-    func parser(_ parser: XMLParser, parseErrorOccurred parseError: Error) {
-        debugPrint(parseError)
-    }
 }

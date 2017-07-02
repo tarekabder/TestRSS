@@ -8,6 +8,11 @@
 
 import Foundation
 
+enum ParseState<T>{
+    case success([T])
+    case error(Error?)
+}
+
 protocol XMLParsable {
     associatedtype T : Mappable
     
@@ -17,5 +22,5 @@ protocol XMLParsable {
     var current:[String:String]? {get set}
     var output:Array<T> {get set}
     
-    func parse()
+    func parse(completion:(ParseState<T>)->Void)
 }
