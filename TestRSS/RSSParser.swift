@@ -1,5 +1,5 @@
 //
-//  DataParser.swift
+//  RSSParser.swift
 //  TestRSS
 //
 //  Created by tarek abderrazik on 17-06-26.

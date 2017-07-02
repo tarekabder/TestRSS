@@ -18,7 +18,6 @@ class ArticlesViewModel: NSObject {
     var delegate:ArticlesViewModelDelegate?
     var articles:[Article] = []
     
-    
     required init(delegate: ArticlesViewModelDelegate?) {
         self.delegate = delegate
         super.init()
@@ -37,5 +36,10 @@ class ArticlesViewModel: NSObject {
                 self.delegate?.articlesDidFailLoading(with: errorMsg)
             }
         }
+    }
+    
+    func articleModel(at indexPath:IndexPath) -> ArticleCellModel {
+        let article = articles[indexPath.row]
+        return ArticleCellModel(article: article)
     }
 }
