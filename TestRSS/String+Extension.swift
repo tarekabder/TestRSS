@@ -9,6 +9,12 @@
 import Foundation
 
 extension String {
+    var clean:String {
+        var str = self.replacingOccurrences(of: "\n", with: "")
+        str = str.replacingOccurrences(of: " ", with: "")
+        return str
+    }
+    
     func subString(from str1:String,to str2:String) -> String? {
         guard let startIndex = self.range(of: str1)?.upperBound else {
             return nil
@@ -20,4 +26,6 @@ extension String {
         return self.substring(with: startIndex..<endIndex)
         
     }
+
+    
 }

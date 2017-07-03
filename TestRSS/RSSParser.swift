@@ -76,5 +76,5 @@ extension RSSParser: XMLParserDelegate{
             element = ""
         }
     }
-    
+
 }

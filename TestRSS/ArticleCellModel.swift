@@ -11,7 +11,10 @@ import UIKit
 class ArticleCellModel: NSObject {
     private var article:Article
     
-    var title:String { return article.title }
+    var title:String {
+        var str = article.title.clean
+        return (str.characters.count > 0) ? str : "Article"
+    }
     var author:String { return article.author }
     var date:String { return article.date }
     var imageUrl:String { return article.imageUrl }

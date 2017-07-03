@@ -23,8 +23,8 @@ class FeedViewController: UITableViewController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = 80
+        self.tableView.estimatedRowHeight = 80
         
         let nib = UINib(nibName: ArticleTableViewCell.cellIdentifier() , bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: ArticleTableViewCell.cellIdentifier() )

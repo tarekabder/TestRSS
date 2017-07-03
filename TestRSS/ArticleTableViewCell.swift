@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Nuke
 
 protocol Reusable: class {
      static func cellIdentifier() -> String
@@ -20,6 +21,11 @@ class ArticleTableViewCell: UITableViewCell {
     @IBOutlet weak var dataLabel: UILabel!
     
     func configure(vm: ArticleCellModel )  {
+        
+        if let url = URL(string: vm.imageUrl){
+            Nuke.loadImage(with: url, into: articleImage)
+        }
+
         titleLabel.text = vm.title
         authorLabel.text = vm.author
         dataLabel.text = vm.date
