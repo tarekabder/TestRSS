@@ -18,17 +18,17 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Fi-GV-mmV" userLabel="Inner">
                     <rect key="frame" x="10" y="10" width="355" height="60"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZLf-Sp-ewG">
-                            <rect key="frame" x="0.0" y="0.0" width="296" height="60"/>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ZLf-Sp-ewG">
+                            <rect key="frame" x="0.0" y="0.0" width="316" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="0Xb-MU-93o"/>
                             </constraints>
                         </imageView>
-                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w4h-HG-z7v" userLabel="Labels">
-                            <rect key="frame" x="284" y="-20" width="71" height="100"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w4h-HG-z7v" userLabel="Labels">
+                            <rect key="frame" x="324" y="0.0" width="31" height="60"/>
                             <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="9rq-xf-vRm">
-                                    <rect key="frame" x="20" y="20" width="31" height="50"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="9rq-xf-vRm">
+                                    <rect key="frame" x="0.0" y="5.5" width="31" height="49.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0b-DH-ahb">
                                             <rect key="frame" x="0.0" y="0.0" width="31" height="14.5"/>

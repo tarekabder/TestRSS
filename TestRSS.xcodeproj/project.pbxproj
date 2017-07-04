@@ -14,6 +14,9 @@
 		CC157B171F06ECB3001DA58D /* XMLParsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC157B161F06ECB3001DA58D /* XMLParsable.swift */; };
 		CC24A6961F0886AF00E72D33 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC24A6941F0886AF00E72D33 /* ArticleTableViewCell.swift */; };
 		CC24A6971F0886AF00E72D33 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC24A6951F0886AF00E72D33 /* ArticleTableViewCell.xib */; };
+		CC5D38271F0AFE5E00D61883 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5D38261F0AFE5E00D61883 /* WebViewController.swift */; };
+		CC5D38291F0AFEAE00D61883 /* WebViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5D38281F0AFEAE00D61883 /* WebViewable.swift */; };
+		CC5D382B1F0C547E00D61883 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5D382A1F0C547E00D61883 /* Reusable.swift */; };
 		CC6CF4381F06F74B004F6AC3 /* Mappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6CF4371F06F74B004F6AC3 /* Mappable.swift */; };
 		CC6CF43A1F06FD15004F6AC3 /* ArticlesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6CF4391F06FD15004F6AC3 /* ArticlesViewModel.swift */; };
 		CCCF2CDE1EF60D3100B4CA3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCCF2CDD1EF60D3100B4CA3E /* AppDelegate.swift */; };
@@ -33,6 +36,9 @@
 		CC157B161F06ECB3001DA58D /* XMLParsable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLParsable.swift; sourceTree = "<group>"; };
 		CC24A6941F0886AF00E72D33 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		CC24A6951F0886AF00E72D33 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
+		CC5D38261F0AFE5E00D61883 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		CC5D38281F0AFEAE00D61883 /* WebViewable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewable.swift; sourceTree = "<group>"; };
+		CC5D382A1F0C547E00D61883 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		CC6CF4371F06F74B004F6AC3 /* Mappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mappable.swift; sourceTree = "<group>"; };
 		CC6CF4391F06FD15004F6AC3 /* ArticlesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticlesViewModel.swift; sourceTree = "<group>"; };
 		CCCF2CDA1EF60D3100B4CA3E /* TestRSS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestRSS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +79,78 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		CC5D382C1F0C55D900D61883 /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				CCCF2CE11EF60D3100B4CA3E /* Main.storyboard */,
+				CC5D38321F0C575700D61883 /* Feed */,
+				CC5D38331F0C576A00D61883 /* Web */,
+			);
+			name = Scene;
+			sourceTree = "<group>";
+		};
+		CC5D382D1F0C560E00D61883 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CCCF2CEF1EFC5C6100B4CA3E /* Article.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		CC5D382E1F0C562C00D61883 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				CC6CF4391F06FD15004F6AC3 /* ArticlesViewModel.swift */,
+				CC157B101EFC6F01001DA58D /* ArticleCellModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		CC5D382F1F0C565300D61883 /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				CC157B161F06ECB3001DA58D /* XMLParsable.swift */,
+				CC6CF4371F06F74B004F6AC3 /* Mappable.swift */,
+				CC157B121F01968C001DA58D /* RSSParser.swift */,
+			);
+			name = Webservice;
+			sourceTree = "<group>";
+		};
+		CC5D38301F0C566D00D61883 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CC157B141F06EB43001DA58D /* String+Extension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		CC5D38311F0C56F900D61883 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CC5D38281F0AFEAE00D61883 /* WebViewable.swift */,
+				CC5D382A1F0C547E00D61883 /* Reusable.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		CC5D38321F0C575700D61883 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				CCCF2CDF1EF60D3100B4CA3E /* FeedViewController.swift */,
+				CC24A6951F0886AF00E72D33 /* ArticleTableViewCell.xib */,
+				CC24A6941F0886AF00E72D33 /* ArticleTableViewCell.swift */,
+			);
+			name = Feed;
+			sourceTree = "<group>";
+		};
+		CC5D38331F0C576A00D61883 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				CC5D38261F0AFE5E00D61883 /* WebViewController.swift */,
+			);
+			name = Web;
+			sourceTree = "<group>";
+		};
 		CCCF2CD11EF60D3000B4CA3E = {
 			isa = PBXGroup;
 			children = (
@@ -94,20 +172,15 @@
 		CCCF2CDC1EF60D3100B4CA3E /* TestRSS */ = {
 			isa = PBXGroup;
 			children = (
-				CCCF2CDD1EF60D3100B4CA3E /* AppDelegate.swift */,
-				CCCF2CDF1EF60D3100B4CA3E /* FeedViewController.swift */,
-				CCCF2CE11EF60D3100B4CA3E /* Main.storyboard */,
 				CCCF2CE41EF60D3100B4CA3E /* Assets.xcassets */,
+				CCCF2CDD1EF60D3100B4CA3E /* AppDelegate.swift */,
+				CC5D382D1F0C560E00D61883 /* Model */,
+				CC5D382C1F0C55D900D61883 /* Scene */,
+				CC5D382E1F0C562C00D61883 /* ViewModel */,
+				CC5D382F1F0C565300D61883 /* Webservice */,
+				CC5D38301F0C566D00D61883 /* Extensions */,
+				CC5D38311F0C56F900D61883 /* Protocols */,
 				CCCF2CE91EF60D3100B4CA3E /* Info.plist */,
-				CCCF2CEF1EFC5C6100B4CA3E /* Article.swift */,
-				CC157B101EFC6F01001DA58D /* ArticleCellModel.swift */,
-				CC157B121F01968C001DA58D /* RSSParser.swift */,
-				CC157B141F06EB43001DA58D /* String+Extension.swift */,
-				CC157B161F06ECB3001DA58D /* XMLParsable.swift */,
-				CC6CF4371F06F74B004F6AC3 /* Mappable.swift */,
-				CC6CF4391F06FD15004F6AC3 /* ArticlesViewModel.swift */,
-				CC24A6941F0886AF00E72D33 /* ArticleTableViewCell.swift */,
-				CC24A6951F0886AF00E72D33 /* ArticleTableViewCell.xib */,
 			);
 			path = TestRSS;
 			sourceTree = "<group>";
@@ -236,13 +309,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC24A6961F0886AF00E72D33 /* ArticleTableViewCell.swift in Sources */,
+				CC5D38271F0AFE5E00D61883 /* WebViewController.swift in Sources */,
 				CC157B171F06ECB3001DA58D /* XMLParsable.swift in Sources */,
 				CCCF2CE01EF60D3100B4CA3E /* FeedViewController.swift in Sources */,
 				CC157B131F01968C001DA58D /* RSSParser.swift in Sources */,
 				CC6CF4381F06F74B004F6AC3 /* Mappable.swift in Sources */,
+				CC5D382B1F0C547E00D61883 /* Reusable.swift in Sources */,
 				CCCF2CDE1EF60D3100B4CA3E /* AppDelegate.swift in Sources */,
 				CC6CF43A1F06FD15004F6AC3 /* ArticlesViewModel.swift in Sources */,
 				CC157B111EFC6F01001DA58D /* ArticleCellModel.swift in Sources */,
+				CC5D38291F0AFEAE00D61883 /* WebViewable.swift in Sources */,
 				CC157B151F06EB43001DA58D /* String+Extension.swift in Sources */,
 				CCCF2CF01EFC5C6100B4CA3E /* Article.swift in Sources */,
 			);

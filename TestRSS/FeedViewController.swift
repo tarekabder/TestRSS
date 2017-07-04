@@ -21,13 +21,15 @@ class FeedViewController: UITableViewController {
         vm = ArticlesViewModel(delegate: self)
         vm.fetchArticles()
         
+        self.navigationItem.title = "Feed"
+        
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.rowHeight = 80
         self.tableView.estimatedRowHeight = 80
         
-        let nib = UINib(nibName: ArticleTableViewCell.cellIdentifier() , bundle: nil)
-        self.tableView.register(nib, forCellReuseIdentifier: ArticleTableViewCell.cellIdentifier() )
+        let nib = UINib(nibName: ArticleTableViewCell.cellIdentifier , bundle: nil)
+        self.tableView.register(nib, forCellReuseIdentifier: ArticleTableViewCell.cellIdentifier )
     }
 }
 
@@ -59,9 +61,20 @@ extension FeedViewController{
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let articleModel = vm.articleModel(at: indexPath)
-        let cell:ArticleTableViewCell = tableView.dequeueReusableCell(withIdentifier: ArticleTableViewCell.cellIdentifier()) as! ArticleTableViewCell
+        let cell:ArticleTableViewCell = tableView.dequeueReusableCell(withIdentifier: ArticleTableViewCell.cellIdentifier) as! ArticleTableViewCell
         cell.configure(vm: articleModel)
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        vm.selectArticle(at: indexPath) { (title, link) in
+            guard let webVC = self.storyboard?.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController else {
+                return
+            }
+            webVC.webTitle = title
+            webVC.webLink = link
+            self.navigationController?.pushViewController(webVC, animated: true)
+        }
     }
 }

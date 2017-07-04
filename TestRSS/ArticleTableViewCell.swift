@@ -9,10 +9,6 @@
 import UIKit
 import Nuke
 
-protocol Reusable: class {
-     static func cellIdentifier() -> String
-}
-
 class ArticleTableViewCell: UITableViewCell {
 
     @IBOutlet weak var articleImage: UIImageView!
@@ -33,7 +29,7 @@ class ArticleTableViewCell: UITableViewCell {
 }
 
 extension ArticleTableViewCell : Reusable {
-    static func cellIdentifier() -> String {
+    static var cellIdentifier:String {
         return "ArticleTableViewCell"
     }
 }

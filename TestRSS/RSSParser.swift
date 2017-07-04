@@ -61,7 +61,7 @@ extension RSSParser: XMLParserDelegate{
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         guard current != nil else { return }
         let foundCharacters = current?[element] ?? ""
-        var value = foundCharacters + string
+        let value = foundCharacters + string
         if element != "image" {
             current?[element] = value
         }

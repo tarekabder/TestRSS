@@ -25,15 +25,22 @@ class ArticlesViewModel: NSObject {
     
     func fetchArticles(){
         self.delegate?.articlesDidStartLoading()
-        let parser = RSSParser()
-        parser.parse { state in
-            switch state{
-            case .success(let articles):
-                self.articles = articles
-                self.delegate?.articlesDidFinishLoading()
-            case .error(let error):
-                let errorMsg = error?.localizedDescription ?? "Unable to load articles"
-                self.delegate?.articlesDidFailLoading(with: errorMsg)
+        DispatchQueue.global(qos: .background).async {
+            
+            let parser = RSSParser()
+            parser.parse { state in
+                switch state{
+                case .success(let articles):
+                    self.articles = articles
+                    DispatchQueue.main.async {
+                        self.delegate?.articlesDidFinishLoading()
+                    }
+                case .error(let error):
+                    DispatchQueue.main.async {
+                        let errorMsg = error?.localizedDescription ?? "Unable to load articles"
+                        self.delegate?.articlesDidFailLoading(with: errorMsg)
+                    }
+                }
             }
         }
     }
@@ -42,4 +49,11 @@ class ArticlesViewModel: NSObject {
         let article = articles[indexPath.row]
         return ArticleCellModel(article: article)
     }
+    
+    func selectArticle(at indexPath:IndexPath,completion:(String,String)->Void) {
+        let article = articles[indexPath.row]
+        completion(article.title.clean, article.webLink.clean)
+        
+    }
+    
 }
